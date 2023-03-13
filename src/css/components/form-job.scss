@@ -1,0 +1,102 @@
+/* Form component stylesheet */
+
+
+.form {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 420px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: $shadow;
+  z-index: 1;
+  opacity: .6;
+  transition: opacity .4s;
+
+  &:hover, &:focus-within {
+    opacity: 1;
+  }
+
+  &-wrapper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  /* icons section */
+  &-ico {
+    background-repeat: no-repeat;
+    width: 36px;
+  }
+
+  /* default icons */
+  #ico {
+    &-pick {
+      background-image: url("/icons/pickUpBadgeBlank.svg");
+    }
+
+    &-drop {
+      background-image: url("/icons/dropOffBadgeBlank.svg");
+    }
+  }
+
+  /* error icons */
+  #ico-err {
+    &-pick {
+      background-image: url("/icons/pickUpBadgeError.svg");
+    }
+
+    &-drop {
+      background-image: url("/icons/dropOffBadgeError.svg");
+    }
+  }
+
+  /* default icons */
+  #ico-valid {
+    &-pick {
+      background-image: url("/icons/pickUpBadgePresent.svg");
+    }
+
+    &-drop {
+      background-image: url("/icons/dropOffBadgePresent.svg");
+    }
+  }
+
+  /* input section */
+  &-input {
+    height: 32px;
+    padding: 0 10px;
+    border-radius: $radius-norm;
+    background-color: #F0F3f7;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* button section */
+  &-button {
+    color: #FFFF;
+    background: linear-gradient(#10A2EA, #0F99E8);
+    border-radius: $radius-norm;
+    padding: 10px;
+    box-shadow: $shadow;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: .5;
+    transition: opacity .3s, transform .1s;
+
+    &.enabled {
+      opacity: 1;
+
+      &:active {
+        transform: scale(.9);
+      }
+    }
+  }
+}
